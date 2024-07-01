@@ -28,8 +28,8 @@ public class match  {
   private  Matchstatus status;
   private Date date=new Date();
 
-    public match(String teamHeading) {
-        this.teamHeading = teamHeading;
+    public match() {
+
     }
 
     public match(String matchNumberVenue, String battingTeam, String battingTeamScore, String bowlTeam, String bowlTeamScore, String liveText, String matchLink, String textComplete, Matchstatus status, Date date) {
