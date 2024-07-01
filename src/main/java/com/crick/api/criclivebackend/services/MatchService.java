@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 public interface MatchService {
-    //get all matches
-    List<match>   getall();
-    //get live matches
-    List<match>   getlive();
-    //get points table
-    List<Map<String,String>>  getPointtables();
+
+List<match> getAllMatches();
+    List<match> getLiveMatches();
+    List<Map<String,String>> getPointTable();
+
+
 }
