@@ -19,9 +19,20 @@ import java.util.List;
     public matchcontroller(MatchService matchService) {
         this.matchService = matchService;
     }
-@GetMapping("/live")
-    public ResponseEntity<List<match>> getLiveMatches()
-    {
-      return  new ResponseEntity<>(this.matchService. getLiveMatches(), HttpStatus.OK);
+
+    @GetMapping("/live")
+    public ResponseEntity<List<match>> getLiveMatches() {
+        return new ResponseEntity<>(this.matchService.getLiveMatches(), HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<match>> getAllMatches() {
+        return new ResponseEntity<>(this.matchService.getAllMatches(), HttpStatus.OK);
+    }
+
+
+    @GetMapping("/pointtable")
+    public ResponseEntity<?> getPointTable() {
+        return new ResponseEntity<>(this.matchService.getPointTable(), HttpStatus.OK);
     }
 }

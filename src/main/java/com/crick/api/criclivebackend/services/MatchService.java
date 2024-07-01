@@ -12,7 +12,7 @@ public interface MatchService {
 
 List<match> getAllMatches();
     List<match> getLiveMatches();
-    List<Map<String,String>> getPointTable();
+    List<List<String>> getPointTable();
 
 
 }

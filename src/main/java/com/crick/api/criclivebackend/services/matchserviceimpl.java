@@ -64,6 +64,7 @@ public class matchserviceimpl implements MatchService {
                 // match1.setMatchStatus();
 
                 matches.add(match1);
+                updateMatchinDb(match1);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -71,8 +72,52 @@ public class matchserviceimpl implements MatchService {
         return matches;
     }
 
+    private void updateMatchinDb(match match1) {
+        match existingMatch = this.matchrepo.findByTeamHeading(match1.getTeamHeading()).orElse(null);
+        if (existingMatch == null) {
+            matchrepo.save(match1);
+        } else {
+            match1.setId(existingMatch.getId());
+            matchrepo.save(match1);
+        }
+    }
+
     @Override
-    public List<Map<String, String>> getPointTable() {
-        return new ArrayList<>();
+    public   List<List<String>>  getPointTable() {
+        List<List<String>> pointTable = new ArrayList<>();
+        String tableURL = "https://www.cricbuzz.com/cricket-series/6732/icc-cricket-world-cup-2023/points-table";
+        try {
+            Document document = Jsoup.connect(tableURL).get();
+            Elements table = document.select("table.cb-srs-pnts");
+            Elements tableHeads = table.select("thead>tr>*");
+            List<String> headers = new ArrayList<>();
+            tableHeads.forEach(element -> {
+                headers.add(element.text());
+            });
+            pointTable.add(headers);
+            Elements bodyTrs = table.select("tbody>*");
+            bodyTrs.forEach(tr -> {
+                List<String> points = new ArrayList<>();
+                if (tr.hasAttr("class")) {
+                    Elements tds = tr.select("td");
+                    String team = tds.get(0).select("div.cb-col-84").text();
+                    points.add(team);
+                    tds.forEach(td -> {
+                        if (!td.hasClass("cb-srs-pnts-name")) {
+                            points.add(td.text());
+                        }
+                    });
+//                    System.out.println(points);
+                    pointTable.add(points);
+                }
+
+
+            });
+
+            System.out.println(pointTable);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return pointTable;
     }
 }
