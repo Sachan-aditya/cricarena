@@ -10,6 +10,7 @@ import { CommonModule, JsonPipe } from '@angular/common';
   styleUrl: './live.component.css'
 })
 export class LiveComponent implements OnInit {
+[x: string]: any;
   livematches:any
   constructor (private api:ApiCallService)
   {

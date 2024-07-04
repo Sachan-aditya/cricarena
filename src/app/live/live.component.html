@@ -1,7 +1,20 @@
 <!-- Live Page -->
 <div class="live-page">
-    <h1 style="color: #fff; background-color: #333; font-weight: bold;">LIVE MATCHES</h1>
-    <pre>{{ livematches | json }}</pre>
-
-
+    <h1 class="text-4xl font-extrabold bg-red-600">LIVE CRICKET</h1>
+    <div class="flex flex-wrap justify-center">
+        <div class="card" *ngFor="let match of livematches" 
+             [style.background-image]="'conic-gradient(from 40deg, #fff, #000)'">
+            <div class="card-header">
+                <h2>{{ match.teamHeading }}</h2>
+            </div>
+            <div class="card-body">
+                <p><span>Match Number:</span> {{ match.matchNumberVenue }}</p>
+                <p><span>Batting Team:</span> {{ match.battingTeam }} ({{ match.battingTeamScore }})</p>
+                <p><span>Bowling Team:</span> {{ match.bowlTeam }} ({{ match.bowlTeamScore }})</p>
+                <p><span>Live Text:</span> {{ match.liveText }}</p>
+                <p><a [href]="match.matchLink">Match Link</a></p>
+                <p><span>Status:</span> {{ match.textComplete }}</p>
+            </div>
+        </div>
+    </div>
 </div>
