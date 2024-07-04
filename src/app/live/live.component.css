@@ -1,0 +1,40 @@
+.live-page {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  .live-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .live-matches {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .match {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 250px;
+  }
+  
+  .match-info {
+    margin-bottom: 10px;
+  }
+  
+  .match-score {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .match-status {
+    font-size: 16px;
+    color: #666;
+  }
