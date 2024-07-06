@@ -1,20 +1,30 @@
 <!-- Live Page -->
 <div class="live-page">
-    <h1 class="text-4xl font-extrabold bg-red-600">LIVE CRICKET</h1>
-    <div class="flex flex-wrap justify-center">
-        <div class="card" *ngFor="let match of livematches" 
-             [style.background-image]="'conic-gradient(from 40deg, #fff, #000)'">
-            <div class="card-header">
-                <h2>{{ match.teamHeading }}</h2>
-            </div>
-            <div class="card-body">
-                <p><span>Match Number:</span> {{ match.matchNumberVenue }}</p>
-                <p><span>Batting Team:</span> {{ match.battingTeam }} ({{ match.battingTeamScore }})</p>
-                <p><span>Bowling Team:</span> {{ match.bowlTeam }} ({{ match.bowlTeamScore }})</p>
-                <p><span>Live Text:</span> {{ match.liveText }}</p>
-                <p><a [href]="match.matchLink">Match Link</a></p>
-                <p><span>Status:</span> {{ match.textComplete }}</p>
-            </div>
+    <h1 class="title">LIVE CRICKET</h1>
+    <div class="match-grid">
+      <div class="match-card" *ngFor="let match of livematches">
+        <div class="match-header">
+          <h2 class="match-title">{{ match.teamHeading }}</h2>
+          <div class="match-status">
+            <span class="status-dot" [ngClass]="{'status-dot-live': match.textComplete === 'Live', 'status-dot-upcoming': match.textComplete === 'Upcoming'}"></span>
+            <p class="status-text">{{ match.textComplete }}</p>
+          </div>
         </div>
+        <div class="match-content">
+          <div class="scoreboard">
+            <div class="team-score">
+              <p class="team-name">{{ match.battingTeam }}</p>
+              <p class="team-score-value">{{ match.battingTeamScore }}</p>
+            </div>
+            <div class="team-score">
+              <p class="team-name">{{ match.bowlTeam }}</p>
+              <p class="team-score-value">{{ match.bowlTeamScore }}</p>
+            </div>
+          </div>
+          <div class="live-update">
+            <p class="live-text">{{ match.liveText }}</p>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
