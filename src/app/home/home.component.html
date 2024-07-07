@@ -1,1 +1,24 @@
-<p>home works!</p>
+<div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12">
+    <p class="text-3xl font-bold mb-4">🏠 COMING SOON!</p>
+    <div class="alert alert-warning shadow-md rounded-md py-4 px-6 mb-4" role="alert">
+      <strong class="font-bold">⚠️ Warning:</strong> This feature is still coming soon! 🕒
+      <p class="text-sm">In the meantime, check out:</p>
+      <ul class="list-none mb-0 flex flex-wrap">
+        <li class="inline-block mr-6 mb-4">
+          <a [routerLink]="'/live'" href="#" class="btn btn-outline-primary hover:bg-blue-50 text-blue-600 font-bold py-2 px-4 rounded">
+            📺 Live
+          </a>
+        </li>
+        <li class="inline-block mr-6 mb-4">
+          <a [routerLink]="'/history'" href="#" class="btn btn-outline-primary hover:bg-blue-50 text-blue-600 font-bold py-2 px-4 rounded">
+            📚 History
+          </a>
+        </li>
+        <li class="inline-block mb-4">
+          <a [routerLink]="'/pointstable'" href="#" class="btn btn-outline-primary hover:bg-blue-50 text-blue-600 font-bold py-2 px-4 rounded">
+            🏆 Points Table
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
