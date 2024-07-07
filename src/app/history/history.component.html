@@ -1,0 +1,30 @@
+<!-- Match History Page -->
+<div class="match-history-page">
+  <h1 class="title">🏆 MATCH HISTORY</h1>
+  <div class="match-grid">
+    <div class="match-card" *ngFor="let match of allmatch">
+      <div class="match-header">
+        <h2 class="match-title">{{ match.teamHeading }}</h2>
+        <div class="match-status">
+          <span class="status-dot" [ngClass]="{'status-dot-live': match.textComplete === 'Live', 'status-dot-upcoming': match.textComplete === 'Upcoming'}"></span>
+          <p class="status-text">{{ match.textComplete }}</p>
+        </div>
+      </div>
+      <div class="match-content">
+        <div class="scoreboard">
+          <div class="team-score">
+            <p class="team-name">{{ match.battingTeam }} 🏏</p>
+            <p class="team-score-value">{{ match.battingTeamScore }}</p>
+          </div>
+          <div class="team-score">
+            <p class="team-name">{{ match.bowlTeam }} 🏏</p>
+            <p class="team-score-value">{{ match.bowlTeamScore }}</p>
+          </div>
+        </div>
+        <div class="live-update">
+          <p class="live-text">{{ match.liveText }} 💬</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
