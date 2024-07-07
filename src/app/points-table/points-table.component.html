@@ -1,0 +1,13 @@
+<table class="point-table">
+    <caption style="font-size: 54px; font-weight: bold;">Points Table</caption>
+    <thead>
+      <tr>
+        <th *ngFor="let header of tableheading" class="table-header">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of pointtable.slice(1)" class="table-row">
+        <td *ngFor="let cell of row" class="table-cell">{{ cell }}</td>
+      </tr>
+    </tbody>
+  </table>

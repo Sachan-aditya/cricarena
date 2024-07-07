@@ -1,0 +1,52 @@
+<!-- Header -->
+<header>
+  <div class="container mx-auto p-4 flex justify-between items-center">
+    <div class="flex items-center">
+      <h1 class="text-4xl font-bold">CRICKARENA</h1>
+    </div>
+    <nav class="flex justify-between items-center">
+      <ul class="flex">
+        <li class="mr-6">
+          <a [routerLink]="'/home'" href="#" class="text-gray-600 hover:text-gray-900 transition duration-300 ease-in-out">Home</a>
+        </li>
+        <li class="mr-6">
+          <a [routerLink]="'/live'" href="#" class="text-gray-600 hover:text-gray-900 transition duration-300 ease-in-out">Live</a>
+        </li>
+        <li class="mr-6">
+          <a [routerLink]="'/history'" href="#" class="text-gray-600 hover:text-gray-900 transition duration-300 ease-in-out">History</a>
+        </li>
+        <li>
+          <a [routerLink]="'/pointstable'" href="#" class="text-gray-600 hover:text-gray-900 transition duration-300 ease-in-out">Points Table</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Router Outlet -->
+<router-outlet></router-outlet>
+
+<!-- Footer -->
+<footer class="fixed bottom-0 left-0 right-0 p-4 bg-gray-200">
+  <div class="container mx-auto">
+    <p class="text-sm">Copyright 2024 CRICKARENA. All rights reserved.</p>
+    <ul class="flex flex-row gap-4">
+      <li>
+        <a href="https://github.com/Sachan-aditya" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition duration-300 ease-in-out">
+          Terms of Service <span class="text-blue-600">📝</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/Sachan-aditya" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition duration-300 ease-in-out">
+          Privacy Policy <span class="text-blue-600">🔒</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/Sachan-aditya" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition duration-300 ease-in-out">
+          Contact Us <span class="text-blue-600">💌</span>
+        </a>
+      </li>
+    </ul>
+    <p class="text-sm text-gray-600">Made with ❤️ by Aditya Sachan</p>
+  </div>
+</footer>
